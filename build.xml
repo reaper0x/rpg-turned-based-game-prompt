@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JustSurviveRpg" default="run" basedir=".">
+    <description>Builds, tests, and runs the project JustSurviveRpg.</description>
+    <import file="nbproject/build-impl.xml"/>
+
+    <!-- Target di compilazione e creazione della cartella build/classes se non esiste -->
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes">
+            <include name="justsurviverpg/**/*.java"/>
+            <!-- Definisci il classpath -->
+            <classpath>
+                <pathelement location="lib/jline-3.29.0.jar"/>
+                <pathelement location="build/classes"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Target di esecuzione -->
+    <target name="run" depends="compile">
+        <java classname="justsurviverpg.JustSurviveRpg" fork="true">
+            <classpath>
+                <pathelement location="lib/jline-3.29.0.jar"/>
+                <pathelement location="build/classes"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
