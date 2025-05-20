@@ -1,13 +1,11 @@
 # File di build e cartelle temporanee
 /build/
-/dist/
 /nbproject/private/
 /build.xml.user
 
 # File NetBeans specifici
 /private/
 /nbbuild/
-/nbdist/
 /.nb-gradle/
 
 # File di sistema
