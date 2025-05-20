@@ -1,0 +1,34 @@
+# File di build e cartelle temporanee
+/build/
+/dist/
+/nbproject/private/
+/build.xml.user
+
+# File NetBeans specifici
+/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# File di configurazione IDE
+*.iml
+*.ipr
+*.iws
+
+# Cartelle e file generati da compilazione Java
+*.class
+
+# File di log
+*.log
+
+# Directory specifiche di sistema
+*.swp
+*.swo
+
+# Altri file di sistema o temporanei
+*.tmp
+*.bak

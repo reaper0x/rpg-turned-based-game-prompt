@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="JustSurviveRpg" default="run" basedir=".">
-    <description>Builds, tests, and runs the project JustSurviveRpg.</description>
-    <import file="nbproject/build-impl.xml"/>
+    <description>Builds, runs, and packages the project JustSurviveRpg.</description>
 
-    <!-- Target di compilazione e creazione della cartella build/classes se non esiste -->
+    <!-- Target per compilare il progetto -->
     <target name="compile">
         <mkdir dir="build/classes"/>
         <javac srcdir="src" destdir="build/classes">
             <include name="justsurviverpg/**/*.java"/>
-            <!-- Definisci il classpath -->
-            <classpath>
-                <pathelement location="lib/jline-3.29.0.jar"/>
-                <pathelement location="build/classes"/>
-            </classpath>
         </javac>
     </target>
 
-    <!-- Target di esecuzione -->
+    <!-- Target per eseguire il progetto -->
     <target name="run" depends="compile">
         <java classname="justsurviverpg.JustSurviveRpg" fork="true">
             <classpath>
-                <pathelement location="lib/jline-3.29.0.jar"/>
                 <pathelement location="build/classes"/>
             </classpath>
         </java>
     </target>
 
+    <!-- Target per creare il file JAR eseguibile -->
+    <target name="jar" depends="compile">
+        <mkdir dir="dist"/>
+        <jar destfile="dist/JustSurviveRpg.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="justsurviverpg.JustSurviveRpg"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Target per pulire le cartelle di build -->
+    <target name="clean">
+        <delete dir="build"/>
+        <delete dir="dist"/>
+    </target>
 </project>
